@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<!--SCSS style is below-->
+		<style>
+			$responsive-card-table-bottom-gap: 1.5rem;
+$responsive-card-table-border: 1px solid $black;
+$responsive-card-table-stack-point: 640px;
+$responsive-card-table-label-bg: $light-gray;
+
+.responsive-card-table {
+  border-collapse: collapse;
+
+  &.unstriped tbody {
+    background-color: transparent;
+  }
+
+  th {
+    background-color: $responsive-card-table-label-bg;
+  }
+
+  tr,
+  th,
+  td {
+    border: $responsive-card-table-border;
+  }
+
+  @media screen and (max-width: $responsive-card-table-stack-point) {
+    thead tr {
+      position: absolute;
+      top: -9999em;
+      left: -9999em;
+    }
+
+    tr {
+      border: $responsive-card-table-border;
+      display: block;
+    }
+
+    tr + tr {
+      margin-top: $responsive-card-table-bottom-gap;
+    }
+    /* Get table cells to act like rows */
+
+    td {
+      border: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: $responsive-card-table-border;
+      padding-left: 50%;
+      position: relative;
+
+      &:before {
+        content: attr(data-label);
+        display: inline-block;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-left: -100%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        background: $responsive-card-table-label-bg;
+        width: 45%;
+        height: 95%;
+        left: 1px;
+        top: 1px;
+        z-index: 0;
+      }
+    }
+  }
+}
+
+		</style>
+		
+		<!--CSS style is below-->
+		<style>
+			.responsive-card-table {
+  border-collapse: collapse;
+}
+
+.responsive-card-table.unstriped tbody {
+  background-color: transparent;
+}
+
+.responsive-card-table th {
+  background-color: #e6e6e6;
+}
+
+.responsive-card-table tr,
+.responsive-card-table th,
+.responsive-card-table td {
+  border: 1px solid #0a0a0a;
+}
+
+@media screen and (max-width: 640px) {
+  .responsive-card-table {
+    
+  }
+  .responsive-card-table thead tr {
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+  }
+  .responsive-card-table tr {
+    border: 1px solid #0a0a0a;
+    display: block;
+  }
+  .responsive-card-table tr + tr {
+    margin-top: 1.5rem;
+  }
+  .responsive-card-table td {
+    border: none;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #0a0a0a;
+    padding-left: 50%;
+    position: relative;
+  }
+  .responsive-card-table td:before {
+    content: attr(data-label);
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-left: -100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .responsive-card-table td:after {
+    content: '';
+    position: absolute;
+    background: #e6e6e6;
+    width: 45%;
+    height: 95%;
+    left: 1px;
+    top: 1px;
+    z-index: 0;
+  }
+}
+
+		</style>
+		
+	</head>
+	<body>
+		<table class="responsive-card-table unstriped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Hero Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="First Name">Bruce</td>
+      <td data-label="Last Name">Wayne</td>
+      <td data-label="Hero Title">Batman</td>
+    </tr>
+    <tr>
+      <td data-label="First Name">Peter</td>
+      <td data-label="Last Name">Parker</td>
+      <td data-label="Hero Title">Spiderman</td>
+    </tr>
+    <tr>
+      <td data-label="First Name">Bruce</td>
+      <td data-label="Last Name">Banner</td>
+      <td data-label="Hero Title">The Hulk</td>
+    </tr>
+    <tr>
+      <td data-label="First Name">Clark</td>
+      <td data-label="Last Name">Kent</td>
+      <td data-label="Hero Title">Superman</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
