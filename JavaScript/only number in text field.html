@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        Mobile Number: <input type="text" onkeypress="return isNumber(event)" name="mobNo"/><br>
+        Confirm Mobile Number: <input type="text" onkeypress="return isNumber(event)" name="confirmMob" maxlength="11"/>
+        <script>
+        function isNumber(event) {
+                var keyCode=event.keyCode;
+                if(keyCode>48 && keyCode<57){
+                    return true;
+                }else {
+                    return false;
+                }
+
+            }
+        </script>
+    </body>
+</html>
